@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        IMAGE_NAME     = 'springboot-crudops'
+        IMAGE_NAME     = 'springbootcrudops'
         CONTAINER_NAME = 'springboot-app'
         APP_PORT       = '8082'
     }
@@ -35,14 +35,13 @@ pipeline {
             steps {
                 echo '🚀 Deploying container...'
                 sh '''
-                    HOST_IP=$(ip route show default | awk '/default/ {print $3}')
-                    echo "Host IP: ${HOST_IP}"
+                    
 
-                    docker stop ${CONTAINER_NAME} 2>/dev/null || true
-                    docker rm   ${CONTAINER_NAME} 2>/dev/null || true
+                    docker stop springboot-app 2>/dev/null || true
+                    docker rm   springboot-app 2>/dev/null || true
 
                     docker run -d \
-                        --name springbootcrudops\
+                        --name springboot-app\
                         -p 8082:8080\
                         -e SPRING_DATASOURCE_URL="jdbc:mysql://host.docker.internal:3306/SpringDocker?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true" \
                         -e SPRING_DATASOURCE_USERNAME=root \
