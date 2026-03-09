@@ -4,7 +4,7 @@ pipeline{
   stages{
     stage("Checkout"){
       steps{
-        git 'https://github.com/Yellareddy07/SpringBootCrudOps.git'
+        git branch: main ,url: 'https://github.com/Yellareddy07/SpringBootCrudOps.git'
       }
     }
 
