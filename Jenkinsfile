@@ -58,7 +58,7 @@ pipeline {
                 echo '❤️ Health checking...'
                 sh '''
                     sleep 20
-                    curl --fail http://localhost:${APP_PORT}/Department/fetch
+                    curl --fail http://localhost:8082/Department/fetch
                     echo "✅ App is running!"
                 '''
             }
