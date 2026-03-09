@@ -8,6 +8,12 @@ pipeline{
     url: 'https://github.com/Yellareddy07/SpringBootCrudOps.git'    
       }
     }
+       stage('Maven Build') {              // ✅ Step 1 - Build JAR first
+            steps {
+                echo '🔨 Building JAR...'
+                sh 'mvn clean package -DskipTests'
+            }
+        }
 
     stage("build"){
       steps{
