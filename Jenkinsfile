@@ -42,7 +42,7 @@ pipeline {
 
                     docker run -d \
                         --name springboot-app\
-                        -p 8082:8080\
+                        -p 8082:8082\
                         -e SPRING_DATASOURCE_URL="jdbc:mysql://host.docker.internal:3306/SpringDocker?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true" \
                         -e SPRING_DATASOURCE_USERNAME=root \
                         -e SPRING_DATASOURCE_PASSWORD=Suyochi@123 \
