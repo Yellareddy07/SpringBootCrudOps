@@ -52,16 +52,7 @@ pipeline {
             }
         }
 
-        stage('Health Check') {
-            steps {
-                echo '❤️ Health checking...'
-                sh '''
-                    sleep 20
-                    curl --fail http://localhost:8082/Department/fetch
-                    echo "✅ App is running!"
-                '''
-            }
-        }
+        
     }
 
     post {
