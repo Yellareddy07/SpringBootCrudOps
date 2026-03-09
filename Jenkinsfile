@@ -11,14 +11,14 @@ pipeline{
 
     stage("build"){
       steps{
-        sh 'docker build -t SpringBootCrud .'
+        sh 'docker build -t springbootcrud .'
         echo 'build successfully'
       }
     }
 
     stage("Deploy"){
       steps{
-        sh 'docker run -d -p 8082:8080 SpringBootCrud'
+        sh 'docker run -d -p 8082:8080 springbootcrud'
       }
     }
   }}
