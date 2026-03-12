@@ -44,8 +44,8 @@ pipeline {
                         --name springboot-app\
                         -p 8082:8082\
                         -e SPRING_DATASOURCE_URL="jdbc:mysql://localhost:3306/SpringDocker" \
-                        -e SPRING_DATASOURCE_USERNAME=root \
-                        -e SPRING_DATASOURCE_PASSWORD=Suyochi@123 \
+                        -e SPRING_DATASOURCE_USERNAME=root1 \
+                        -e SPRING_DATASOURCE_PASSWORD=roo121356 \
                         -e SPRING_JPA_HIBERNATE_DDL_AUTO=update \
                         springbootcrudops
                 '''
